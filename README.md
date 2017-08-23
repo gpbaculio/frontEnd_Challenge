@@ -1,4 +1,4 @@
-# Relay TodoMVC
+# Relay Graphql Mongoose: FrontEnd Challenge
 
 ## Installation
 
