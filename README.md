@@ -1,4 +1,4 @@
-# Relay TodoMVC
+# React+Relay+Graphql+Mongoose: FrontEnd Challenge
 
 ## Installation
 
