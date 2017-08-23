@@ -17,6 +17,7 @@ class SignUpAndLogin extends Component {
         if (!this.state.login) {
           UserRegistration.commit(fullName, email, password, (token, error) => { // the export on .'./mutations/UserRegistrationMutation.js' is an object with commit property which has a value of function. so we refer to it like this.
             this._saveUserData(token, error);
+            window.location.reload(true);
             this.props.history.push(`/`);
           });
         } else {

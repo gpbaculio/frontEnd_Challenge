@@ -14,7 +14,7 @@ class Todo extends Component {
             <Card.Content>
               <Icon style={{float:'right'}} name='user'/>
               <Card.Header>
-                {this.props.viewer.fullName || this.props.todo.fullName}
+                {this.props.todo.fullName}
               </Card.Header>
               <Card.Meta>
                 Complete: <span style={{color:'#404040'}}>{`${this.props.todo.complete}`} </span>
