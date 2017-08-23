@@ -1,4 +1,4 @@
-# Relay Graphql Mongoose: FrontEnd Challenge
+# React+Relay+Graphql+Mongoose: FrontEnd Challenge
 
 ## Installation
 
