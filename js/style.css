@@ -1,0 +1,143 @@
+.asd {
+	margin-left: 50px !important;
+}
+body, html {
+    margin:0;
+    padding:0;
+    line-height: 1.5em;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.logout-icon {
+	padding: 12px 16px;
+}
+
+.logout-text {
+	padding-left: 5px;
+}
+
+.right-nav {
+	margin-right: 50px !important;
+}
+.ui.dropdown>.dropdown.icon {
+    position: relative;
+    width: auto;
+    font-size: .85714286em;
+    margin: 0 1em 0 0;
+}
+.ui.card, .ui.cards>.card {
+    margin-right: 0 !important;
+}
+.ui.buttons>.ui.dropdown:last-child .menu, .ui.menu .right.dropdown.item .menu, .ui.menu .right.menu .dropdown:last-child .menu {
+    left: -22px;
+    right: 0;
+}
+.contentIcon {
+	position: absolute;
+	right:16px;
+	bottom:12px;
+	cursor: pointer;
+}
+.onLoading-icon {
+	font-size: 40px;
+	position: absolute;
+	top: 38%;
+	left: 45%;
+}
+.collapse {
+	display: none;
+}
+
+.toLogin-toSignup-container {
+	margin: 8% auto auto auto;
+	border-radius: 3px;
+	border:solid #E7E7E8 2px;
+	position: relative;
+	width: 450px;
+	height: auto;
+}
+p.toLogin-toSignUp-question:hover {
+	text-decoration: none;
+}
+.toLogin-toSignUp-question {
+	color: black;
+}
+
+.toLogin-toSignUp:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.toLogin-toSignUp {
+	color: #0077CC;
+}
+
+.toLogin-toSignUp-question-container {
+	font-size: 14px;
+	margin-top: 15px;
+	text-align: center;
+}
+
+
+/* chat sidebar and popup css */ 
+.chat-sidebar {
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top:44px;
+    padding-bottom: 10px;
+    border: 1px solid rgba(29, 49, 91, .3);
+}
+
+ .popup-box {
+    display: block; /* change to block*/
+    position: absolute;
+    top:500px;
+    bottom: 0px;
+    right: 300px;
+    height: 285px;
+    background-color: white;
+    width: 300px;
+    border: 1px solid rgba(29, 49, 91, .3);
+}
+.message-list {
+    margin: auto;
+    height: 230px;
+    width: 300px;
+    overflow-y: scroll;
+}
+.popup-box .popup-head {
+    background-color: #6d84b4;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    clear: both;
+}
+            
+.popup-box .popup-head .popup-head-left {
+    float: left;
+}
+            
+.popup-box .popup-head .popup-head-right {
+    float: right;
+    opacity: 0.5;
+}
+            
+.popup-box .popup-head .popup-head-right a {
+    text-decoration: none;
+    color: inherit;
+}
+            
+.popup-box .popup-messages {
+    height: 285px;
+    overflow-y: scroll;
+}
+.popup-input {
+    position: absolute;
+    bottom:0;
+    height: 10%;
+    width: 100%;
+}
