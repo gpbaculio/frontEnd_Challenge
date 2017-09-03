@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'babel-polyfill'
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 import React, { Component } 
   from 'react';
 import { createFragmentContainer, graphql, createPaginationContainer } 
@@ -6,8 +9,11 @@ import { createFragmentContainer, graphql, createPaginationContainer }
 import { ConnectionHandler } 
   from 'relay-runtime';
 
+<<<<<<< HEAD
 import 'antd/dist/antd.css';
 import Pagination from 'antd/lib/Pagination';
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 import { Tab, Button } from 'semantic-ui-react'
 
 import Todo            from './Todo';
@@ -15,11 +21,26 @@ import Todo            from './Todo';
 
 class TodoListHome extends Component {
 
+<<<<<<< HEAD
   state = {
     getPublicTodosLength:0,
     currentPage:1,
     currentPageArgForFfterCursor:''
   }
+=======
+  // _getPageCount() {
+  //   const totalBookCount = this.props.viewer.publicTodos.edges.length;
+  //   const bookPageSize = this.props.relay.variables.bookPageSize;
+
+  //   let pageCount = totalBookCount / bookPageSize >> 0;
+
+  //   if (totalBookCount % bookPageSize !== 0) {
+  //       pageCount++;
+  //   }
+
+  //   return pageCount;
+  // }
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 
   _renderTodos() {
     if(this.props.viewer.publicTodos.edges.length === 0) {
@@ -38,6 +59,7 @@ class TodoListHome extends Component {
 
   _loadMore() {
     if(!this.props.relay.hasMore() || this.props.relay.isLoading()) {
+<<<<<<< HEAD
       return;
     } 
     this.props.relay.loadMore(2)
@@ -116,6 +138,15 @@ class TodoListHome extends Component {
 
   render() {
     let { getPublicTodosLength } = this.state;
+=======
+      console.log("invoked in")
+      return;
+    } 
+    console.log("invoked out")
+    this.props.relay.loadMore(1)
+  }
+  render() {
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
     return (<div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%', height: '100%',textAlign: 'center'}}>
               <div><ul style={{listStyle: 'none',marginLeft: 'auto', marginRight: 'auto', textAlign: 'left',width:'32%'}}>      
                 {this._renderTodos()}
@@ -123,7 +154,10 @@ class TodoListHome extends Component {
               <Button primary onClick={()=>this._loadMore()}> Load More </Button>
             </div>)
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 }
 
 export default createPaginationContainer(
@@ -153,6 +187,7 @@ export default createPaginationContainer(
       ...Todo_viewer
     }`,
   {
+<<<<<<< HEAD
     getConnectionFromProps(props) {
       return props.viewer && props.viewer.publicTodos;
     },
@@ -168,6 +203,25 @@ export default createPaginationContainer(
       return {
         count,
         cursor,
+=======
+    direction: 'forward',
+    getConnectionFromProps(props) {
+      return props.viewer && props.viewer.publicTodos;
+    },
+    getFragmentVariables(prevVars, totalCount) {
+      return {
+        ...prevVars,
+        count: totalCount,
+      };
+    },
+    getVariables(props, {count, cursor}, fragmentVariables) {
+      return {
+        count,
+        cursor
+        // in most cases, for variables other than connection filters like
+        // `first`, `after`, etc. you may want to use the previous values.
+        // orderBy: fragmentVariables.orderBy,
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
       };
     },
     query: graphql`

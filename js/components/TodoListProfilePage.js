@@ -7,9 +7,13 @@ import TodoListProfile from './TodoListProfile';
 import environment  from '../RelayEnvironment';
 
 const TodoListProfilePageQuery = graphql` #CONFIGURE GRAPHQL QUERY FOR THIS TOMORROW
+<<<<<<< HEAD
   query TodoListProfilePageQuery(
        $count: Int!, $cursor: String
       )  {
+=======
+  query TodoListProfilePageQuery {
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
     viewer { #viewer query on graphql, the component TodoListProfilePage will receive this.props.viewer if configured properly on schema.js
       ...TodoListProfile_viewer #fragment on TodoListProfile component, that's why we import it here.
     }
@@ -23,9 +27,12 @@ class TodoListProfilePage extends Component {
       <QueryRenderer
         environment={environment}
         query={TodoListProfilePageQuery}
+<<<<<<< HEAD
          variables={{
           count: 4,
         }}
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         render={({error, props}) => {
           if (error) {
             console.log(error)

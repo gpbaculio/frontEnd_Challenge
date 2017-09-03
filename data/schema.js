@@ -91,7 +91,10 @@ const GraphQLTodo = new GraphQLObjectType({
     fullName: {
       type: GraphQLString,
       resolve: (root) => {
+<<<<<<< HEAD
         console.log("root._creatorUserId.fullName = ",root._creatorUserId.fullName)
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         return root._creatorUserId.fullName;
       },
     },
@@ -177,9 +180,12 @@ const GraphQLUser = new GraphQLObjectType({
     fullName: {
       type: GraphQLString,
       resolve: (root, args, context) => {
+<<<<<<< HEAD
         console.log("root._id.toString() = ",root._id.toString())
         console.log("context.user._id.toString() = ",context.user._id.toString())
         console.log(root._id.toString() === context.user._id.toString())
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         if(root._id.toString() === context.user._id.toString()) {
           return  root.fullName // _id of context
         }
@@ -281,10 +287,16 @@ const GraphQLAddTodoMutation = mutationWithClientMutationId({
       type: GraphQLTodoEdge,
       resolve: async ({newTodo}, args,context) => {
         const todos = await getTodosByUserContext(context.user._id, 'any');
+<<<<<<< HEAD
         const todoAdded = getTodoByUserContext(context.user._id, newTodo._id)
         return {
           cursor: offsetToCursor([...todos], newTodo),
           node: todoAdded,
+=======
+        return {
+          cursor: offsetToCursor([...todos], newTodo),
+          node: newTodo,
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         };
       },
     },

@@ -26,9 +26,12 @@ body, html {
     font-size: .85714286em;
     margin: 0 1em 0 0;
 }
+<<<<<<< HEAD
 .ui.card, .ui.cards>.card {
     margin-right: 0 !important;
 }
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 .ui.buttons>.ui.dropdown:last-child .menu, .ui.menu .right.dropdown.item .menu, .ui.menu .right.menu .dropdown:last-child .menu {
     left: -22px;
     right: 0;

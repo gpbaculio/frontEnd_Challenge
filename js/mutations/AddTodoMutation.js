@@ -59,21 +59,34 @@ function commit(
       updater: (store) => {
         const payload = store.getRootField('addTodo');
         const newEdge = payload.getLinkedRecord('todoEdge');
+<<<<<<< HEAD
         const viewer = payload.getLinkedRecord('viewer');
         const viewerFullname = viewer.getValue('fullName');
               newEdge.setValue(viewerFullname, 'fullName');
               console.log("newEdge = ",newEdge)
         const userProxy = store.get(user.id);
+=======
+        const userProxy = store.get(user.id);
+        console.log("updater newEdge = ",newEdge)
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         const conn = ConnectionHandler.getConnection(
           userProxy,
           'TodoListProfile_allTodosByUser',
         );
         
+<<<<<<< HEAD
         ConnectionHandler.insertEdgeBefore(conn, newEdge);
       },
       optimisticUpdater: (store) => {
         const userProxy = store.get(user.id);
         const fullNameProxy = userProxy.getValue('fullName');
+=======
+        ConnectionHandler.insertEdgeAfter(conn, newEdge);
+      },
+      optimisticUpdater: (store) => {
+        const userProxy = store.get(user.id);
+        const fullNameProxy = userProxy.getValue('fullName'); // i think it's just right to get the fullName on the viewer/user proxy
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 
         const id = 'client:newTodo:' + tempID++;
         const node = store.create(id, 'Todo');
@@ -94,7 +107,11 @@ function commit(
           'TodoListProfile_allTodosByUser',
         );
 
+<<<<<<< HEAD
         ConnectionHandler.insertEdgeBefore(conn, newEdge);
+=======
+        ConnectionHandler.insertEdgeAfter(conn, newEdge);
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
         userProxy.setValue(
           userProxy.getValue('totalCount') + 1,
           'totalCount',

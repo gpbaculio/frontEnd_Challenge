@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { Link }             from 'react-router-dom';
 import { withRouter }       from 'react-router';
 import { createFragmentContainer, graphql } 
@@ -9,6 +10,16 @@ import { Menu, Segment, Icon, Dropdown, Button, Grid }
 
 class Header extends Component {
 
+=======
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { createFragmentContainer, graphql } 
+  from 'react-relay';
+import { Menu, Segment, Icon, Dropdown, Button, Grid } from 'semantic-ui-react'
+
+
+class Header extends Component {
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
   state = { 
     activeItem: '', 
     showNavMenu: false 
@@ -37,11 +48,19 @@ class Header extends Component {
   }
 
   render() {
+<<<<<<< HEAD
 
    const userId            = this.props.viewer._id; // if there is a logged in user, this should be true
    const localStorageToken = localStorage.getItem('user_token'); // if there is a logged in user, this should be true since we only set token on login and register
    const { activeItem }    = this.state; // this is for semantic ui react
 
+=======
+   const userId = this.props.viewer._id; // if there is a logged in user, this should be true
+   const localStorageToken = localStorage.getItem('user_token'); // if there is a logged in user, this should be true since we only set token on login and register
+   console.log("userId = ",userId)
+   console.log("localStorageToken = ",localStorageToken)
+   const { activeItem } = this.state; // this is for semantic ui react
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
    const NavMenu = (stackable) =>  {// menu is horizontal by default
       let showNavMenuOnClick;
       if(stackable) {
@@ -51,7 +70,11 @@ class Header extends Component {
       }
             return (<Menu stackable={stackable} pointing secondary>   
                       <Menu.Item className={stackable ? '' : "asd"} >
+<<<<<<< HEAD
                         createdBy = () => <strong style={{marginLeft: '5px'}}> Glendon Philipp Baculio </strong> {stackable ? <span className="contentIcon" onClick={this.showNavMenuClick}> <Icon name='content' /> </span> : ''}
+=======
+                        (createdBy) => <strong style={{marginLeft: '5px'}}> Glendon Philipp Baculio </strong> {stackable ? <span className="contentIcon" onClick={this.showNavMenuClick}> <Icon name='content' /> </span> : ''}
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
                       </Menu.Item>
                       <Menu.Menu position="right">
                       </Menu.Menu>
@@ -67,12 +90,28 @@ class Header extends Component {
                             <Icon name='home' /> Home
                           </Menu.Item>
                                                             
+<<<<<<< HEAD
+=======
+                          <Menu.Item name='Messages'  active={activeItem === '/friendRequests'} onClick={this.handleItemClick} >
+                            <Icon name='users' /> { stackable ? 'Friend Requests' : ''}
+                          </Menu.Item>
+
+                          <Menu.Item name='Messages'  active={activeItem === '/messages'} onClick={this.handleItemClick} >
+                            <Icon name='chat' /> { stackable ? 'Messages' : ''}
+                          </Menu.Item>
+                                                            
+                          <Menu.Item name='Notifications' active={activeItem === '/notifications'} onClick={this.handleItemClick} >
+                            <Icon name='world' /> { stackable ? 'Notifications' : ''}
+                          </Menu.Item>
+                                                            
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
                           {stackable ? (<Menu.Item onClick={this.handleItemClick} >
                                           <Icon name='shutdown' /> Logout
                                         </Menu.Item>) :                                                               
                                       (<Dropdown  className="logout-icon" pointing >
                                         <Dropdown.Menu>
                                           <Dropdown.Item onClick={this.handleItemClick} >
+<<<<<<< HEAD
                                              <span className='logout-text'><span
                                                                               onClick={() => {
                                                                                 localStorage.removeItem('user_token');
@@ -83,6 +122,9 @@ class Header extends Component {
                                                                             Logout
                                                                           </span>
                                              </span>
+=======
+                                             <span className='logout-text'>Logout</span>
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
                                           </Dropdown.Item>
                                         </Dropdown.Menu>
                                       </Dropdown>)}

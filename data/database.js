@@ -59,12 +59,17 @@ export async function getFriendsByUser(contextUserId) {
 
 export async function getPublicTodos() {
   try {
+<<<<<<< HEAD
     const publicTodos = await TodoModel.find({privacy: "public"}).populate('_creatorUserId').sort({createdAt: 'descending'}); // so we can see the latest todo added
+=======
+    const publicTodos = await TodoModel.find({privacy: "public"}).populate('_creatorUserId');
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
     return publicTodos;
   } catch(e) {
     console.error(e)
   }
 }
+<<<<<<< HEAD
 export async function getTodoByUserContext(contextUserId,todoId) {
   const todo = await TodoModel.findOne({_id:todoId, _creatorUserId:contextUserId }).populate('_creatorUserId');
 console.log("todo = ",todo);
@@ -75,6 +80,13 @@ export async function getTodosByUserContext(contextUserId, status = 'any') { // 
                 if(status === 'any') {
                   const todos = await TodoModel.find({_creatorUserId: contextUserId}).populate('_creatorUserId').sort({createdAt: 'descending'});;
                   console.log("getTodosByUserContext todos = ",todos)
+=======
+
+export async function getTodosByUserContext(contextUserId, status = 'any') { // by default, status = 'any'
+               try {
+                if(status === 'any') {
+                  const todos = await TodoModel.find({_creatorUserId: contextUserId}).populate('_creatorUserId');
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
                   return todos;
                 }
                 if(status === 'complete') {

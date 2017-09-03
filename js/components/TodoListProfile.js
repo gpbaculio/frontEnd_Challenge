@@ -1,6 +1,10 @@
 import React, { Component } 
   from 'react';
+<<<<<<< HEAD
 import { createPaginationContainer, graphql } 
+=======
+import { createFragmentContainer, graphql } 
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
   from 'react-relay';
 import { ConnectionHandler } 
   from 'relay-runtime';
@@ -16,7 +20,11 @@ import AddTodoMutation from '../mutations/AddTodoMutation';
 class TodoListProfile extends Component {
 
   state = {
+<<<<<<< HEAD
     text: ''
+=======
+    text: '',
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
   }
 
   _renderTodos() {
@@ -46,6 +54,7 @@ class TodoListProfile extends Component {
     this.setState({text: ''});
   }
 
+<<<<<<< HEAD
   _loadMore = () => {
     if(!this.props.relay.hasMore() || this.props.relay.isLoading()) {
       return;
@@ -53,6 +62,8 @@ class TodoListProfile extends Component {
     this.props.relay.loadMore(4)
   }
 
+=======
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
   render() {
 const menu = (
       <Menu onClick={({key}) => this.setState({ privacy: key })}>
@@ -65,10 +76,16 @@ const menu = (
     const showPrivacy = (privacy) => {
       if(privacy === 'public') {
         return 'Public';
+<<<<<<< HEAD
+=======
+      } else if(privacy === 'friends') {
+        return 'Friends';
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
       } else if(privacy === 'onlyMe') {
         return 'Only Me';
       }
     }
+<<<<<<< HEAD
       
     const panes = [
       { menuItem: 'Todos', render: () => {
@@ -76,6 +93,16 @@ const menu = (
                 <section className="createTodo-box">
                 <span style={{ fontSize: '20px', marginTop:'6px'}}> Load More Pagination </span>
                                      <div style={{marginTop:'12px'}} className="createTodo-inside">
+=======
+    const panes = [
+      { menuItem: 'Todos', render: () => {
+        return (<Tab.Pane>
+                <section className="createTodo-box">
+                                     <div className="createTodo-inside">
+                                       <div className="createTodo-title">
+                                       Create Todo
+                                       </div>
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
                                        <Input
                                          value={this.state.text}
                                          style={{ width: '200px' }}
@@ -83,6 +110,7 @@ const menu = (
                                          type='text'
                                          placeholder='What needs to be done?'
                                        />
+<<<<<<< HEAD
                                        <Button className="createTodo-button" style={{marginLeft: '5px'}} onClick={() => this._confirm()} type="primary"> Create </Button>
                                    </div> 
                                  </section>
@@ -98,6 +126,19 @@ const menu = (
     ];
 
 
+=======
+                                       <Button className="createTodo-button" onClick={() => this._confirm()} type="primary"> Create </Button>
+                          
+                                   </div> 
+                                 </section>
+                <ul style={{ listStyle: 'none'}}>      
+                  {this._renderTodos()}
+                </ul> 
+                </Tab.Pane>)
+      } },
+      { menuItem: 'About the developer', render: () => <Tab.Pane>Can't think of anything else. I enjoy javascript and planting/farming. I am from Philippines. Mabuhay! I'll add more info here soon since I am not a criminal anyway, my email is gpbaculio@gmail.com ^____^ </Tab.Pane> },
+    ]
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 
     return (
       <div>
@@ -109,11 +150,17 @@ const menu = (
 
 }
 
+<<<<<<< HEAD
 export default createPaginationContainer(
   TodoListProfile, 
      graphql`# not sure, but i believe the queries below is to make sure that the data is available before THIS component renders?
   fragment TodoListProfile_viewer on User { # User is a name of a GraphQL type on ../data/schema.js
     allTodosByUser( first: $count after: $cursor ) @connection(key: "TodoListProfile_allTodosByUser") { #this is a relay connection
+=======
+export default createFragmentContainer(TodoListProfile, graphql`# not sure, but i believe the queries below is to make sure that the data is available before THIS component renders?
+  fragment TodoListProfile_viewer on User { # User is a name of a GraphQL type on ../data/schema.js
+    allTodosByUser( first: 100 ) @connection(key: "TodoListProfile_allTodosByUser") { #this is a relay connection
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
       edges {
         node {
           ...Todo_todo # the data dependency of Todo component
@@ -124,17 +171,25 @@ export default createPaginationContainer(
           fullName
         }
       }
+<<<<<<< HEAD
       pageInfo { # for pagination
                 hasPreviousPage
                 startCursor 
                 hasNextPage
                 endCursor 
               }
+=======
+      pageInfo {
+        hasPreviousPage 
+        hasNextPage
+      }
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
     }
     id
     fullName
     ...Todo_viewer
   }
+<<<<<<< HEAD
 `,
   {
     getConnectionFromProps(props) {
@@ -165,3 +220,6 @@ export default createPaginationContainer(
       }
     `
   })
+=======
+`)
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098

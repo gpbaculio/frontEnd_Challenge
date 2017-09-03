@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema({
     required: false,
     index: true,
   },
+<<<<<<< HEAD
   todos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'todoModel', index: true }] // todoModel can be anything, can be Todo as long as it is relevant to other mongoose Model
+=======
+  todos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'todoModel' }] // todoModel can be anything, can be Todo as long as it is relevant to other mongoose Model
+>>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 }, {
   timestamps: {
     createdAt: 'createdAt',
