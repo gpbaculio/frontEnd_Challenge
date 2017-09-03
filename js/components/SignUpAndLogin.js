@@ -1,14 +1,9 @@
-<<<<<<< HEAD
+
 import React, { Component }    from 'react';
 import { Button,  Form, Grid } from 'semantic-ui-react'
 import UserRegistration        from '../mutations/UserRegistrationMutation';
 import LoginEmail              from '../mutations/LoginEmailMutation';
-=======
-import React, { Component } from 'react';
-import { Button,  Form, Grid } from 'semantic-ui-react'
-import UserRegistration from '../mutations/UserRegistrationMutation';
-import LoginEmail from '../mutations/LoginEmailMutation';
->>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
+
 
 class SignUpAndLogin extends Component {
 
@@ -22,21 +17,13 @@ class SignUpAndLogin extends Component {
      _confirm = () => {
         const { fullName, email, password } = this.state
         if (!this.state.login) {
-<<<<<<< HEAD
           UserRegistration.commit(fullName, email, password, (token, error) => { 
-=======
-          UserRegistration.commit(fullName, email, password, (token, error) => { // the export on .'./mutations/UserRegistrationMutation.js' is an object with commit property which has a value of function. so we refer to it like this.
->>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
             this._saveUserData(token, error);
             window.location.reload(true);
             this.props.history.push(`/`);
           });
         } else {
-<<<<<<< HEAD
           LoginEmail.commit(email,password, (token, error) => { 
-=======
-          LoginEmail.commit(email,password, (token, error) => { // the export on .'./mutations/UserRegistrationMutation.js' is an object with commit property which has a value of function. so we refer to it like this.
->>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
             this._saveUserData(token, error);
             window.location.reload(true);
             this.props.history.push(`/`);
@@ -58,11 +45,8 @@ class SignUpAndLogin extends Component {
         style={{ height: '100%' }}
         verticalAlign='middle'
       >
-<<<<<<< HEAD
         <Grid.Column style={{ maxWidth: '450px' }}>
-=======
-        <Grid.Column style={{ maxWidth: '450' }}>
->>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
+
         <Form>
         <h4 className='mv3'>{this.state.login ? 'Login' : 'Sign Up'}</h4>
           <p> You can login with this email: gpbaculio@gmail.com pass: abcd123 </p>

@@ -15,11 +15,7 @@ const todoSchema = new mongoose.Schema({
     type: String,
     default: 'public',
   },
-<<<<<<< HEAD
   _creatorUserId: { type: mongoose.Schema.Types.ObjectId, ref: 'userModel', index: true  }
-=======
-  _creatorUserId: { type: mongoose.Schema.Types.ObjectId, ref: 'userModel' }
->>>>>>> e5f35113fc03dec2f9f71eaaf0de4e03c27f9098
 },{
   timestamps: {
     createdAt: 'createdAt',
